@@ -146,3 +146,127 @@
     right: 0;
   }
 }
+#chatBox {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+body {
+    background-color: #ffff73;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Pacifico', cursive;
+    color: #ff0000;
+}
+
+.btn-primary {
+    background-color: #2ecc71;
+    border-color: #27ae60;
+}
+
+.btn-primary:hover {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+.btn-success {
+    background-color: #3498db;
+    border-color: #2980b9;
+    color: #ff0000; /* Couleur du texte du bouton */
+}
+
+.btn-success:hover {
+    background-color: #2980b9;
+    border-color: #0000ff;
+}
+
+.label-success {
+    background-color: #2ecc71;
+}
+
+.label-info {
+    background-color: #3498db;
+}
+
+.label-warning {
+    background-color: #f1c40f;
+}
+
+.label-danger {
+    background-color: #e74c3c;
+}
+<div class="panel-body" id="chatBox">
+    <div class="message animated" v-for="(message, index) in messages" :key="index">
+        <span class="label label-info">{{ message.name }}</span> {{ message.text }}
+    </div>
+</div>
+
+/* Ajoutez la classe 'fadeInDown' pour une animation de chute lorsqu'un nouveau message arrive */
+.message {
+    padding: 5px;
+}
+
+.message:nth-child(odd) {
+    background-color: #f4f4f4;
+}
+
+.message:nth-child(even) {
+    background-color: #e0e0e0;
+}
+
+.animated {
+    animation-duration: 1s;
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Ajoutez ce code dans votre fichier CSS */
+.modal2-content {
+  background-color: #f1c40f; /* Couleur de fond */
+  color: #ffffff; /* Couleur du texte */
+  border: 2px solid #e67e22; /* Bordure */
+}
+
+.modal2-header {
+  background-color: #e67e22; /* Couleur de fond de l'en-tête */
+  color: #ffffff; /* Couleur du texte de l'en-tête */
+}
+
+.modal2-footer {
+  background-color: #e67e22; /* Couleur de fond du pied de page */
+}
+
+.btn-primary {
+  background-color: #3498db; /* Couleur de fond du bouton */
+  border-color: #2980b9; /* Bordure du bouton */
+  color: #ff0000; /* Couleur du texte du bouton */
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #2980b9; /* Couleur de fond du bouton en survol ou au focus */
+  border-color: #2980b9; /* Bordure du bouton en survol ou au focus */
+}
